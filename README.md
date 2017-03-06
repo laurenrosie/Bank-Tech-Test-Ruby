@@ -1,5 +1,7 @@
 # Bank (Ruby)
 
+[![Coverage Status](https://coveralls.io/repos/github/laurenrosie/Bank-Tech-Test-Ruby/badge.svg?branch=master)](https://coveralls.io/github/laurenrosie/Bank-Tech-Test-Ruby?branch=master)
+[![Build Status](https://travis-ci.org/laurenrosie/Bank-Tech-Test-Ruby.svg?branch=master)](https://travis-ci.org/laurenrosie/Bank-Tech-Test-Ruby)
 ## Specification
 
 ```
