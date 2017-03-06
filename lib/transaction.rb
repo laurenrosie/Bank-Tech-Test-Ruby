@@ -1,6 +1,6 @@
 require 'date'
 
-class Deposit
+class Transaction
 
   attr_reader :amount, :date
 
