@@ -2,7 +2,7 @@ require 'spec_helper'
 require './lib/transaction'
 
 describe Transaction do
-  subject(:my_transaction){described_class.new(200)}
+  subject(:my_transaction){described_class.new(200, 0)}
   it 'intializes with an amount' do
     expect(my_transaction.amount).to eq 200
   end
@@ -12,7 +12,7 @@ describe Transaction do
   end
 
   it 'records the date of the deposit if specified' do
-    dated_transaction = Transaction.new(200, "01/01/2011")
+    dated_transaction = Transaction.new(200, 200, "01/01/2011")
     expect(dated_transaction.date).to eq "01/01/2011"
   end
 

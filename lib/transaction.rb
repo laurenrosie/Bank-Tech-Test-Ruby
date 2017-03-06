@@ -2,11 +2,12 @@ require 'date'
 
 class Transaction
 
-  attr_reader :amount, :date
+  attr_reader :amount, :date, :new_balance
 
-  def initialize(amount, date=nil)
+  def initialize(amount, new_balance, the_date=nil)
     @amount = amount
-    @date = get_date(date)
+    @date = get_date(the_date)
+    @new_balance = new_balance
   end
 
   private

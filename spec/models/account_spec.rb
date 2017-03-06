@@ -24,7 +24,7 @@ describe Account do
 
 
     it 'creates an instance of the class deposit' do
-      expect(Transaction).to receive(:new).with(200, nil)
+      expect(Transaction).to receive(:new).with(200, 200, nil)
       my_account.deposit(200)
     end
 
@@ -34,10 +34,9 @@ describe Account do
 
 
     it 'records the date of the deposit if specified' do
-      expect(Transaction).to receive(:new).with(100,"01/01/2016" )
+      expect(Transaction).to receive(:new).with(100,100,"01/01/2016" )
       my_account.deposit(100, "01/01/2016")
     end
-
 
   end
 
@@ -52,7 +51,7 @@ describe Account do
 
     it 'creates an instance of the class withdrawal' do
       my_account.deposit(200)
-      expect(Transaction).to receive(:new).with(-100, nil)
+      expect(Transaction).to receive(:new).with(-100, 100, nil)
       my_account.withdraw(100)
 
     end
@@ -64,8 +63,17 @@ describe Account do
 
     it 'records the date of the withdrawal if specified' do
       my_account.deposit(200)
-      expect(Transaction).to receive(:new).with(-100,"02/01/2016" )
+      expect(Transaction).to receive(:new).with(-100, 100, "02/01/2016" )
       my_account.withdraw(100, "02/01/2016")
+    end
+  end
+
+  describe '#print_statement' do
+    it 'prints the statement' do
+      my_account.deposit(100)
+      my_account.withdraw(50)
+      expected_output = "date       || credit || debit   || balance\n06/03/2017 ||        ||  50.00  ||   50.00\n06/03/2017 ||  100.00||         ||  100.00\n"
+      expect{my_account.print_statement}.to output(expected_output).to_stdout
     end
   end
 end
