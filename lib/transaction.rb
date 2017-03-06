@@ -9,6 +9,8 @@ class Transaction
     @date = get_date(date)
   end
 
+  private
+
   def get_date(date)
     date ? date :  Date.today.strftime("%d/%m/%Y")
   end
