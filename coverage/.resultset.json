@@ -1,0 +1,17 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Lauren/makers/Bank-Tech-Test-Ruby/lib/account.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        3,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1488801764
+  }
+}
