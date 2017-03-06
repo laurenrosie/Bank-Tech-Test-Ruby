@@ -57,6 +57,7 @@ This will be accessed via the Javascript Console in any browser.
 
 ```
 > my_account = Account.new()
+  #<Account:0x007ffe431695d8 @current_balance=0, @transactions=[]>
 > my_account.deposit(200, "10/01/2016")
   £200 has been successfully deposited. The current balance is £200
 > my_account.withdraw(50, "12/01/2016")
