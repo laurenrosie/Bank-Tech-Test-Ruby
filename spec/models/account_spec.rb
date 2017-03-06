@@ -24,7 +24,7 @@ describe Account do
 
 
     it 'creates an instance of the class deposit' do
-      expect(Transaction).to receive(:new).with(200, 200, nil)
+      expect(my_account.transaction_class).to receive(:new).with(200, 200, nil)
       my_account.deposit(200)
     end
 
@@ -34,7 +34,7 @@ describe Account do
 
 
     it 'records the date of the deposit if specified' do
-      expect(Transaction).to receive(:new).with(100,100,"01/01/2016" )
+      expect(my_account.transaction_class).to receive(:new).with(100,100,"01/01/2016" )
       my_account.deposit(100, "01/01/2016")
     end
 
@@ -42,28 +42,28 @@ describe Account do
 
   describe '#withdraw' do
 
-    it 'changes account balance by given amount' do
+    before do
       my_account.deposit(200)
+    end
+
+    it 'changes account balance by given amount' do
       my_account.withdraw(100)
       expect(my_account.current_balance).to eq 100
     end
 
 
     it 'creates an instance of the class withdrawal' do
-      my_account.deposit(200)
-      expect(Transaction).to receive(:new).with(-100, 100, nil)
+      expect(my_account.transaction_class).to receive(:new).with(-100, 100, nil)
       my_account.withdraw(100)
 
     end
 
     it 'adds the deposit to the account\'s transactions' do
-      my_account.deposit(200)
       expect{my_account.withdraw(100)}.to change{my_account.transactions.count}.by(1)
     end
 
     it 'records the date of the withdrawal if specified' do
-      my_account.deposit(200)
-      expect(Transaction).to receive(:new).with(-100, 100, "02/01/2016" )
+      expect(my_account.transaction_class).to receive(:new).with(-100, 100, "02/01/2016" )
       my_account.withdraw(100, "02/01/2016")
     end
   end

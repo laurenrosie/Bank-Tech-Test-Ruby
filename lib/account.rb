@@ -3,11 +3,12 @@ require './lib/statement'
 
 class Account
 
-  attr_reader :current_balance, :transactions
+  attr_reader :current_balance, :transactions, :transaction_class
 
-  def initialize
+  def initialize()
     @current_balance = 0
     @transactions = []
+    @transaction_class = Transaction
   end
 
   def deposit(amount, date = nil)
@@ -33,7 +34,7 @@ class Account
   end
 
   def create_transaction(amount, new_balance, date)
-    @transactions << Transaction.new(amount, new_balance, date)
+    @transactions << @transaction_class.new(amount, new_balance, date)
   end
 
   def sufficient_balance?(amount)
