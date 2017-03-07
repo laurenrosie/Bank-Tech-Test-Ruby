@@ -36,16 +36,11 @@ Possible Later Additions
 **Discussion**
 
 Deposits and a Withdrawals are both essentially *Transactions* in that
-they will both have a Date, Amount, Initial Balance and New Balance. However,
-with a view to future features they have been separated into different Models
-here as they are subject to different constraints. This extracts the
-responsibility of a *Transaction* being aware of its own type although
-intuitively the two are very similar in structure.
+they will both have a Date, Amount, Initial Balance and New Balance.
 
 The addition of the option of a specified date for withdrawals and deposits is
 included in order to most closely replicate the acceptance criteria. In practice
-the current date would be stored by default for each transaction, as occurs by
-default if a date is not specified.
+the current date would be stored by default for each transaction, as occurs currently if a date is not specified.
 
 The account creation and therefore the initial balance is not shown in the
 statement, only the transactions.
