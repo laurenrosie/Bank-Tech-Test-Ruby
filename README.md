@@ -2,6 +2,11 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/laurenrosie/Bank-Tech-Test-Ruby/badge.svg?branch=master)](https://coveralls.io/github/laurenrosie/Bank-Tech-Test-Ruby?branch=master)
 [![Build Status](https://travis-ci.org/laurenrosie/Bank-Tech-Test-Ruby.svg?branch=master)](https://travis-ci.org/laurenrosie/Bank-Tech-Test-Ruby)
+
+## Notes
+
+- In following the Acceptance Criteria exactly, I have included the same column sizes and justifications exactly, this led to a longer Statement class than otherwise.
+
 ## Specification
 
 ```
