@@ -11,7 +11,6 @@ class Statement
   def print_statement
     print_header
     print_body
-    
   end
 
 
@@ -28,11 +27,12 @@ class Statement
   end
 
   def print_line(transaction)
-    print transaction.date + " ||"
+    print transaction.date+" ||"
     print credit_column(transaction.amount) + "||"
-    print debit_column(transaction.amount) + "||"
+    print debit_column(transaction.amount)+"||"
     print balance_column(transaction.new_balance)
   end
+
 
   def credit_column(amount)
     column = float(amount).rjust(COLUMN_WIDTH, " ")
