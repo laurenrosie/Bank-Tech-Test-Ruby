@@ -1,5 +1,4 @@
 require './lib/transaction'
-require './lib/statement'
 
 class Account
 
@@ -21,9 +20,6 @@ class Account
     sufficient_balance?(amount) ? perform_withdrawal(amount, date) : withdrawal_rejection_message
   end
 
-  def print_statement
-    Statement.new(self).print_statement
-  end
 
   private
 

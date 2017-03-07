@@ -68,12 +68,5 @@ describe Account do
     end
   end
 
-  describe '#print_statement' do
-    it 'prints the statement' do
-      my_account.deposit(100, "06/03/2017")
-      my_account.withdraw(50, "06/03/2017")
-      expected_output = "date       || credit || debit   || balance\n06/03/2017 ||        ||  50.00  ||   50.00\n06/03/2017 ||  100.00||         ||  100.00\n"
-      expect{my_account.print_statement}.to output(expected_output).to_stdout
-    end
-  end
+
 end
