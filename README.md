@@ -48,7 +48,7 @@ statement, only the transactions.
 
 ## User Interface
 
-This will be accessed via the Javascript Console in any browser.  
+This will be accessed via any Ruby REPL for example IRB.  
 
 ```
 > my_account = Account.new()
