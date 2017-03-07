@@ -59,7 +59,9 @@ This will be accessed via any Ruby REPL for example IRB.
   £50 has been successfully withdrawn. The current balance is £150
 > my_account.withdraw(300)
   This withdrawal could not be completed due to insufficient funds
-> my_account.statement()
+> my_statement = Statement.new(account)
+  #<Statement:0x007f9edc023f50 @account=#<Account:0x0 ...], @transaction_class=Transaction...>>
+> my_statement.print_statement
   date       || credit || debit   || balance
   12/01/2016 ||        || 50.00   || 150.00
   10/01/2016 || 200.00 ||         || 200.00
