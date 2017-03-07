@@ -37,7 +37,6 @@ describe Account do
       expect(my_account.transaction_class).to receive(:new).with(100,100,"01/01/2016" )
       my_account.deposit(100, "01/01/2016")
     end
-
   end
 
   describe '#withdraw' do
