@@ -12,9 +12,4 @@ describe Statement do
     expect(my_statement.account).to eq my_account
   end
 
-  describe '#print_statement' do
-    it 'prints a statement in the desired form' do
-      # my_account.stub(:transactions).and_return({})
-    end
-  end
 end

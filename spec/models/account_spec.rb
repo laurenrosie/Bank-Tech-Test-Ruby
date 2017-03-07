@@ -37,6 +37,7 @@ describe Account do
       expect(my_account.transaction_class).to receive(:new).with(100,100,"01/01/2016" )
       my_account.deposit(100, "01/01/2016")
     end
+
   end
 
   describe '#withdraw' do
@@ -62,7 +63,7 @@ describe Account do
     end
 
     it 'records the date of the withdrawal if specified' do
-      expect(my_account.transaction_class).to receive(:new).with(-100, 100, "02/01/2016" )
+      expect(my_account.transaction_class).to receive(:new).with(-100, 100, "02/01/2016")
       my_account.withdraw(100, "02/01/2016")
     end
   end
